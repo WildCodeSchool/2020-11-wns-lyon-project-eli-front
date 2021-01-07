@@ -28,26 +28,29 @@ const AuthForm = (): JSX.Element => {
             Email
           </label>
           <input
-            className="w-full rounded-md p-2 border-solid border border-gray-400"
+            className="w-full rounded-md p-2 border-solid border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             type="email"
             name="email"
             ref={register()}
-            placeholder="email"
+            placeholder="Votre email"
           />
         </div>
         <div className="w-full flex flex-col mb-8">
           <label className="mb-2" htmlFor="password">
-            Password
+            Mot de passe
           </label>
           <input
-            className="w-full rounded-md p-2 border-solid border border-gray-400"
+            className="w-full rounded-md p-2 border-solid border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             name="password"
             type="password"
             ref={register()}
-            placeholder="******"
+            placeholder="Votre mot de passe"
           />
         </div>
-        <button className="w-1/2 rounded-full bg-blue-500 p-2 focus:outline-none text-white" type="submit">
+        <button
+          className="w-full sm:w-1/2 rounded-full bg-blue-500 hover:bg-blue-600 p-2 focus:outline-none text-white"
+          type="submit"
+        >
           Se connecter
         </button>
       </form>

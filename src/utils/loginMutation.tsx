@@ -4,8 +4,8 @@ import { useCookies } from 'react-cookie';
 import { useAuthToken } from '../hooks/auth';
 
 export const loginMutationGQL = gql`
-  mutation auth($password: String!, $login: String!) {
-    authenticate(password: $password, email: $login) {
+  mutation auth($password: String!, $email: String!) {
+    authenticate(password: $password, email: $email) {
       token
       user {
         email
@@ -20,19 +20,19 @@ export const useLoginMutation = () => {
 
   const [mutation, mutationResults] = useMutation(loginMutationGQL, {
     onCompleted: (data) => {
-      // console.log(data.authenticate.user.email);
+      console.log(data);
       setCookie('user', data.authenticate.user.email);
       setAuthToken(data.authenticate.token);
     },
   });
 
   // full login function
-  const login = async (user: string, password: string): Promise<FetchResult<unknown>> => {
+  const login = async (email: string, password: string): Promise<FetchResult<unknown>> => {
     removeAuthtoken();
     return await mutation({
       variables: {
         password,
-        login: user,
+        email,
       },
     });
   };

@@ -29,7 +29,7 @@ const Dashboard = (): JSX.Element => {
   return (
     <>
       <header>
-        <h1>ELI Project</h1>
+        <h1>Dahsboard</h1>
       </header>
       <section>
         <div>

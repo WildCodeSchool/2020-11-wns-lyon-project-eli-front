@@ -9,6 +9,6 @@ import { useAppApolloClient } from '../services/apolloClient';
  *
  * I find this solution for now
  */
-export const AuthProvider = (props: any): JSX.Element => {
+export const APIProvider = (props: any): JSX.Element => {
   return <ApolloProvider client={useAppApolloClient()}>{props.children}</ApolloProvider>;
 };
