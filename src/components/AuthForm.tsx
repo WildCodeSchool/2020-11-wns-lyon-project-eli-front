@@ -44,10 +44,10 @@ const AuthForm = (): JSX.Element => {
             name="password"
             type="password"
             ref={register()}
-            placeholder="******"
+            placeholder="mot de passe"
           />
         </div>
-        <button className="w-1/2 rounded-full bg-blue-500 p-2 focus:outline-none text-white" type="submit">
+        <button className="w-full sm:w-1/2 rounded-full bg-blue-500 p-2 focus:outline-none text-white" type="submit">
           Se connecter
         </button>
       </form>

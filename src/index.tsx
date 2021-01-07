@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './tailwind.output.css';
 import App from './App';
-import { AuthProvider } from './providers/AuthProvider';
+import { APIProvider } from './providers/APIProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
+    <APIProvider>
       <App />
-    </AuthProvider>
+    </APIProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
