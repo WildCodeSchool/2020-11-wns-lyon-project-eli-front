@@ -15,14 +15,14 @@ interface Matiere {
 }
 
 const classeMock: Classe[] = [
-  { id: 0, name: 'Classe 1', img: '' },
+  { id: 1, name: 'Classe 1', img: '' },
   { id: 2, name: 'Classe 2', img: '' },
   { id: 3, name: 'Classe 3', img: '' },
   { id: 4, name: 'Classe 4', img: '' },
 ];
 
 const subjectMock: Matiere[] = [
-  { id: 0, name: 'Matiere 1', img: '' },
+  { id: 1, name: 'Matiere 1', img: '' },
   { id: 2, name: 'Matiere 2', img: '' },
   { id: 3, name: 'Matiere 3', img: '' },
   { id: 4, name: 'Matiere 4', img: '' },
@@ -30,13 +30,40 @@ const subjectMock: Matiere[] = [
 
 export const CreateNewCourse = (): JSX.Element => {
   /* Partie "Selection" */
-  const [classSelect, setClassSelect] = useState<number>();
-  const [subjectSelect, setSubjectSelect] = useState<number>();
+  const [classSelected, setClassSelected] = useState<number[]>([]);
+  const [subjectSelected, setSubjectSelected] = useState<number[]>([]);
   /* Partie "Création du cours" */
   const [courseTitle, setCourseTitle] = useState<string>();
   const [courseSubTitle, setCourseSubTitle] = useState<string>();
   const [courseSubDuration, setCourseSubDuration] = useState<number>();
   const [courseContent, setCourseContent] = useState<string>();
+
+  const addClasseSelected = (id: number) => {
+    if (classSelected.includes(id)) {
+      const newArray = classSelected;
+      newArray.splice(classSelected.indexOf(id), 1);
+      setClassSelected(newArray);
+    } else {
+      setClassSelected([...classSelected, id]);
+    }
+  };
+  const addSubjectSelected = (id: number) => {
+    if (subjectSelected.includes(id)) {
+      const newArray = subjectSelected;
+      newArray.splice(subjectSelected.indexOf(id), 1);
+      setSubjectSelected(newArray);
+    } else {
+      setSubjectSelected([...subjectSelected, id]);
+    }
+  };
+
+  /*useEffect(() => {
+    console.log(classSelected);
+  }, [classSelected]);
+
+  useEffect(() => {
+    console.log(subjectSelected);
+  }, [subjectSelected]);*/
 
   return (
     <form className="grid gap-0 grid-cols-3">
@@ -46,7 +73,13 @@ export const CreateNewCourse = (): JSX.Element => {
           {classeMock.map((classe, index) => {
             return (
               <div key={index}>
-                <button className="h-16 w-full bg-gray-200 text-gray-800 font-medium rounded-md p-3 cursor-pointer mb-5">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    addClasseSelected(classe.id);
+                  }}
+                  className="h-16 w-full bg-gray-200 text-gray-800 font-medium rounded-md p-3 cursor-pointer mb-5"
+                >
                   {classe.name}
                 </button>
               </div>
@@ -58,7 +91,13 @@ export const CreateNewCourse = (): JSX.Element => {
           {subjectMock.map((subject, index) => {
             return (
               <div key={index}>
-                <button className="h-16 w-full bg-gray-200 text-gray-800 font-medium rounded-md p-3 cursor-pointer mb-5">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    addSubjectSelected(subject.id);
+                  }}
+                  className="h-16 w-full bg-gray-200 text-gray-800 font-medium rounded-md p-3 cursor-pointer mb-5"
+                >
                   {subject.name}
                 </button>
               </div>
