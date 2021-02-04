@@ -53,7 +53,8 @@ export const UploadCourse = (): JSX.Element => {
             <div key={index} className="flex flex-row justify-between items-center mb-2">
               <p>{fileName}</p>
               <button
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault;
                   handleFileDelete(index);
                 }}
                 className="inline-block bg-red-500 hover:bg-red-700 text-white font-medium rounded-md p-2 focus:outline-none"
