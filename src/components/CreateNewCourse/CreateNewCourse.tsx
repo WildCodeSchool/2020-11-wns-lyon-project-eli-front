@@ -35,7 +35,7 @@ export const CreateNewCourse = (): JSX.Element => {
   /* Partie "Création du cours" */
   const [courseTitle, setCourseTitle] = useState<string>();
   const [courseSubTitle, setCourseSubTitle] = useState<string>();
-  const [courseSubDuration, setCourseSubDuration] = useState<number>();
+  const [courseDuration, setCourseDuration] = useState<number>();
   const [courseContent, setCourseContent] = useState<string>();
 
   const addClasseSelected = (id: number) => {
@@ -47,6 +47,7 @@ export const CreateNewCourse = (): JSX.Element => {
       setClassSelected([...classSelected, id]);
     }
   };
+
   const addSubjectSelected = (id: number) => {
     if (subjectSelected.includes(id)) {
       const newArray = subjectSelected;
@@ -57,13 +58,18 @@ export const CreateNewCourse = (): JSX.Element => {
     }
   };
 
-  /*useEffect(() => {
-    console.log(classSelected);
-  }, [classSelected]);
-
-  useEffect(() => {
-    console.log(subjectSelected);
-  }, [subjectSelected]);*/
+  const handleTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCourseTitle(event.target.value);
+  };
+  const handleSubtitle = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCourseSubTitle(event.target.value);
+  };
+  const handleDuration = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCourseDuration(parseInt(event.target.value));
+  };
+  const handleContent = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setCourseContent(event.target.value);
+  };
 
   return (
     <form className="grid gap-0 grid-cols-3">
@@ -75,10 +81,10 @@ export const CreateNewCourse = (): JSX.Element => {
               <div key={index}>
                 <button
                   type="button"
-                  onClick={(e) => {
+                  onClick={() => {
                     addClasseSelected(classe.id);
                   }}
-                  className="h-16 w-full bg-gray-200 text-gray-800 font-medium rounded-md p-3 cursor-pointer mb-5"
+                  className="onClickClass h-16 w-full bg-gray-200 text-gray-800 font-medium rounded-md p-3 cursor-pointer mb-5"
                 >
                   {classe.name}
                 </button>
@@ -93,7 +99,7 @@ export const CreateNewCourse = (): JSX.Element => {
               <div key={index}>
                 <button
                   type="button"
-                  onClick={(e) => {
+                  onClick={() => {
                     addSubjectSelected(subject.id);
                   }}
                   className="h-16 w-full bg-gray-200 text-gray-800 font-medium rounded-md p-3 cursor-pointer mb-5"
@@ -116,6 +122,7 @@ export const CreateNewCourse = (): JSX.Element => {
             id="courseTitle"
             type="text"
             className="focus:outline-none h-14 bg-white shadow-lg w-full border border-solid border-black rounded-md mb-5 px-4"
+            onChange={handleTitle}
           />
         </div>
         <div>
@@ -127,6 +134,7 @@ export const CreateNewCourse = (): JSX.Element => {
             id="courseSubtitle"
             type="text"
             className="focus:outline-none h-14 bg-white shadow-lg w-full border border-solid border-black rounded-md mb-5 px-4"
+            onChange={handleSubtitle}
           />
         </div>
         <div>
@@ -136,8 +144,9 @@ export const CreateNewCourse = (): JSX.Element => {
           <input
             name="courseTime"
             id="courseTime"
-            type="text"
+            type="number"
             className="focus:outline-none h-14 bg-white shadow-lg w-full border border-solid border-black rounded-md mb-5 px-4"
+            onChange={handleDuration}
           />
         </div>
         <div>
@@ -148,6 +157,7 @@ export const CreateNewCourse = (): JSX.Element => {
             name="courseContent"
             id="courseContent"
             className="focus:outline-none h-80 bg-white shadow-lg w-full border border-solid border-black rounded-md mb-5 p-4 resize-none"
+            onChange={handleContent}
           />
         </div>
         <div className="mb-5">
@@ -158,7 +168,7 @@ export const CreateNewCourse = (): JSX.Element => {
           <button
             type="button"
             className="focus:outline-none inline-block bg-blue-400 hover:bg-blue-600 text-white font-medium rounded-md p-3 px-20 cursor-pointer"
-            onClick={(e) => {
+            onClick={() => {
               console.log('test');
             }}
           >
