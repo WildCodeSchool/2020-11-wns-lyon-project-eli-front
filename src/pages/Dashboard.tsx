@@ -11,12 +11,12 @@ export const Dashboard = (): JSX.Element => {
                 </div>
                 <div className="h-2/4">
                     <ul className="flex flex-col h-full justify-around text-xl font-medium text-center">
-                        <li className="text-white font-semibold">Lien 1</li>
-                        <li className="text-white font-semibold text-opacity-50">Lien 2</li>
-                        <li className="text-white font-semibold text-opacity-50">Lien 3</li>
-                        <li className="text-white font-semibold text-opacity-50">Lien 4</li>
-                        <li className="text-white font-semibold text-opacity-50">Lien 5</li>
-                        <li className="text-white font-semibold text-opacity-50">Lien 6</li>
+                        <li className="text-white font-semibold cursor-pointer">Lien 1</li>
+                        <li className="text-white font-semibold text-opacity-50 cursor-pointer">Lien 2</li>
+                        <li className="text-white font-semibold text-opacity-50 cursor-pointer">Lien 3</li>
+                        <li className="text-white font-semibold text-opacity-50 cursor-pointer">Lien 4</li>
+                        <li className="text-white font-semibold text-opacity-50 cursor-pointer">Lien 5</li>
+                        <li className="text-white font-semibold text-opacity-50 cursor-pointer">Lien 6</li>
                     </ul>
                 </div>
             </div>
