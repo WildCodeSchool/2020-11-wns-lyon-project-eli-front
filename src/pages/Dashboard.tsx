@@ -6,7 +6,7 @@ import logo from "../assets/images/Logo-eli-1.png";
 export const Dashboard = (): JSX.Element => {
     return (
         <div className="min-h-screen w-full flex flex-nowrap bg-gray-50">
-            <div className="bg-gray-600 w-48 flex-initial flex flex-col pt-3">
+            <div className="bg-gray-600 w-48 flex-initial flex flex-col pt-3 ">
                 <div className="text-white my-4 h-1/4 flex items-center justify-center">
                     <img src={logo} alt="" />
                 </div>
