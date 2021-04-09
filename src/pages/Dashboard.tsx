@@ -11,19 +11,19 @@ export const Dashboard = (): JSX.Element => {
                 </div>
                 <div className="h-2/4">
                     <ul className="flex flex-col h-full justify-around text-xl font-medium text-center">
-                        <li className="text-white font-bold">Lien 1</li>
-                        <li className="text-white font-bold text-opacity-50">Lien 2</li>
-                        <li className="text-white font-bold text-opacity-50">Lien 3</li>
-                        <li className="text-white font-bold text-opacity-50">Lien 4</li>
-                        <li className="text-white font-bold text-opacity-50">Lien 5</li>
-                        <li className="text-white font-bold text-opacity-50">Lien 6</li>
+                        <li className="text-white font-semibold">Lien 1</li>
+                        <li className="text-white font-semibold text-opacity-50">Lien 2</li>
+                        <li className="text-white font-semibold text-opacity-50">Lien 3</li>
+                        <li className="text-white font-semibold text-opacity-50">Lien 4</li>
+                        <li className="text-white font-semibold text-opacity-50">Lien 5</li>
+                        <li className="text-white font-semibold text-opacity-50">Lien 6</li>
                     </ul>
                 </div>
             </div>
             <div className="flex-auto flex flex-col">
-                <div className="bg-white flex flex-1 my-3 mx-3 rounded-2xl shadow items-center max-h-60 max-w-6xl">
+                <div className="bg-white flex flex-1 my-3 mx-3 rounded-2xl shadow items-center max-h-60 max-w-6xl border">
                     <div className="flex flex-col flex-1 pl-5">
-                        <h3 className="text-3xl pb-3 mb-5">Welcome back, Eric!</h3>
+                        <h3 className="text-3xl pb-3 mb-5">Welcome back, <strong>Eric !</strong></h3>
                         <p className="z-40">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                         <p className="z-40">Lorem, ipsum dolor.</p>
                     </div>
@@ -32,7 +32,7 @@ export const Dashboard = (): JSX.Element => {
                     </div>
                 </div>
                 <div className="flex justify-between flex-1 my-3 mx-3">
-                    <div className="flex flex-col flex-1 mr-4 bg-white rounded-2xl shadow px-5 py-5">
+                    <div className="flex flex-col flex-1 mr-4 bg-white rounded-2xl shadow px-5 py-5 border">
                         <div className="flex justify-between py-2">
                             <h2 className="text-lg font-bold text-gray-600">My classes</h2>
                             <button className="py-1 px-2 text-gray-400 font-bold text-sm duration-300 ease-in-out hover:text-gray-600">View all</button>
@@ -80,7 +80,7 @@ export const Dashboard = (): JSX.Element => {
                             </li>
                         </ul>
                     </div>
-                    <div className=" flex flex-col items-center flex-1 bg-white rounded-2xl shadow px-5 py-5">
+                    <div className=" flex flex-col items-center flex-1 bg-white rounded-2xl shadow px-5 py-5 border">
                         <div className="flex justify-between w-full items-baseline">
                             <h2 className="text-lg font-bold text-gray-600">Working hours</h2>
                             <button className="px-3 py-2 w-24 bg-yellow-300 rounded bg-opacity-50 shadow text-yellow-500 duration-200 ease-in-out hover:bg-yellow-500 hover:text-white">
@@ -121,7 +121,7 @@ export const Dashboard = (): JSX.Element => {
                         <h2 className="text-lg font-bold text-gray-600">My media for lessons</h2>
                         <button className="py-1 px-2 text-gray-400 font-bold text-sm duration-300 ease-in-out hover:text-gray-600">View all</button>
                     </div>
-                    <div className="flex justify-between items-center bg-white rounded shadow w-full pl-5 py-3 mb-3">
+                    <div className="flex justify-between items-center bg-white rounded shadow w-full pl-5 py-3 mb-3 border">
                         <span className="inline-block py-2 px-2 bg-red-200 rounded font-bold text-red-500">A1</span>
                         <div className="w-1/6 flex">
                             <p className="font-bold text-gray-600">Common French</p>
@@ -140,7 +140,7 @@ export const Dashboard = (): JSX.Element => {
                             <p className="font-bold text-gray-600">43MB</p>
                         </div>
                     </div>
-                    <div className="flex justify-between items-center bg-white rounded shadow w-full pl-5 py-3 mb-3">
+                    <div className="flex justify-between items-center bg-white rounded shadow w-full pl-5 py-3 mb-3 border">
                         <span className="inline-block py-2 px-2 bg-green-200 rounded font-bold text-green-500">B4</span>
                         <div className="w-1/6 flex">
                             <p className="font-bold text-gray-600">Math 101</p>
@@ -159,7 +159,7 @@ export const Dashboard = (): JSX.Element => {
                             <p className="font-bold text-gray-600">43MB</p>
                         </div>
                     </div>
-                    <div className="flex justify-between items-center bg-white rounded shadow w-full pl-5 py-3 mb-3">
+                    <div className="flex justify-between items-center bg-white rounded shadow w-full pl-5 py-3 mb-3 border">
                         <span className="inline-block py-2 px-2 bg-yellow-200 rounded font-bold text-yellow-500">C2</span>
                         <div className="w-1/6 flex">
                             <p className="font-bold text-gray-600">History 101</p>
@@ -178,7 +178,7 @@ export const Dashboard = (): JSX.Element => {
                             <p className="font-bold text-gray-600">20MB</p>
                         </div>
                     </div>
-                    <div className="flex justify-between items-center bg-white rounded shadow w-full pl-5 py-3 mb-3">
+                    <div className="flex justify-between items-center bg-white rounded shadow w-full pl-5 py-3 mb-3 border">
                         <span className="inline-block py-2 px-2 bg-blue-200 rounded font-bold text-blue-500">C3</span>
                         <div className="w-1/6 flex">
                             <p className="font-bold text-gray-600">Biology 101</p>
@@ -202,8 +202,8 @@ export const Dashboard = (): JSX.Element => {
             <div className="w-1/4 flex flex-col mt-3 flex-initial">
                 <div className="flex w-full flex-initial items-center pb-5 px-5">
                     <div className="flex w-1/4 flex-initial text-2xl justify-around">
-                        <i className="font-normal pr-5 fas fa-search cursor-pointer"></i>
-                        <i className="font-normal far fa-bell cursor-pointer"></i>
+                        <i className="font-normal text-gray-600 pr-5 fas fa-search cursor-pointer transition-all transform hover:scale-110 duration-300 ease-in-out"></i>
+                        <i className="font-normal text-gray-600 far fa-bell cursor-pointer transition-all transform hover:scale-110 duration-300 ease-in-out"></i>
                     </div>
                     <div className="flex-1 w-2/4 flex flex-col items-end pr-4">
                         <h4 className="text-lg font-bold text-gray-700">Eric Smith</h4>
@@ -215,23 +215,11 @@ export const Dashboard = (): JSX.Element => {
                         </span>
                     </div>
                 </div>
-                <div className="flex flex-col flex-1 bg-white justify-between rounded-tl-2xl shadow py-5 px-5">
+                <div className="flex flex-col flex-1 bg-white justify-between rounded-tl-2xl shadow py-4 px-5 border">
                     <div className="mx-5 h-2/5">
                         <Calendar />
-                        {/* <div className="flex items-center justify-between mb-3">
-                            <h2 className="text-2xl text-gray-700"><strong>July</strong> 2021</h2>
-                            <div>
-                                <button className="transition-all transform hover:scale-110 duration-300 ease-in-out"><i className="fas fa-chevron-left bg-gray-200 px-2.5 rounded py-2 mr-2"></i></button>
-                                <button className="transition-all transform hover:scale-110 duration-300 ease-in-out"><i className="fas fa-chevron-right bg-gray-600 px-2.5 rounded text-white py-2"></i></button>
-                            </div>
-                        </div>
-                        <div className="w-full h-48 bg-yellow-500 mb-5">
-                            <main>
-                                <Calendar />
-                            </main>
-                        </div> */}
                     </div>
-                    <div className="flex flex-col mx-5">
+                    <div className="flex flex-col mx-5 mb-1">
                         <div className="flex justify-between mb-3">
                             <h2 className="text-lg font-bold text-gray-700">Next lessons</h2>
                             <button className="py-1 px-2 text-gray-400 font-bold text-sm duration-300 ease-in-out hover:text-gray-600">View all</button>
@@ -304,7 +292,7 @@ export const Dashboard = (): JSX.Element => {
                             <h2 className="text-lg font-bold text-gray-600">Completed Quizzes</h2>
                             <button className="py-1 px-2 text-gray-400 font-bold text-sm duration-300 ease-in-out hover:text-gray-600">View all</button>
                         </div>
-                        <div className="flex items-center bg-white rounded shadow w-full pl-5 py-3 mb-3">
+                        <div className="flex items-center bg-white rounded shadow w-full pl-5 py-3 mb-3 border">
                             <span className="inline-block py-2 px-2 bg-red-200 rounded font-bold text-red-500">
                                 <i className="fas fa-square-root-alt"></i>
                             </span>
@@ -316,7 +304,7 @@ export const Dashboard = (): JSX.Element => {
                                 <i className="fas fa-chevron-right mr-2 "></i>
                             </button>
                         </div>
-                        <div className="flex items-center bg-white rounded shadow w-full pl-5 py-3">
+                        <div className="flex items-center bg-white rounded shadow w-full pl-5 py-3 border">
                             <span className="inline-block py-2 px-2 bg-indigo-200 rounded font-bold text-indigo-500">
                                 <i className="fas fa-globe-europe"></i>
                             </span>
