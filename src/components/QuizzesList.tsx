@@ -10,6 +10,28 @@ export function QuizzesList(): JSX.Element {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
+    const callback = function (entries: any) {
+      entries.forEach((entry: any) => {
+        console.log(entry);
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-fadeIn");
+        } else {
+          entry.target.classList.remove("animate-fadeIn");
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback);
+
+    const targets = document.querySelectorAll(".js-show-on-scroll");
+    targets.forEach(function (target) {
+      target.classList.add("opacity-0");
+      observer.observe(target);
+    });
+  })
+
+  useEffect(() => {
     setQuizzes(allQuizzes.filter((quiz:QuizType) => {
       if (!quiz.subtitle) quiz.subtitle = ''
       return quiz.title.toLowerCase().includes(search.toLowerCase()) || quiz.subtitle.toLowerCase().includes(search.toLowerCase());
@@ -40,7 +62,6 @@ export function QuizzesList(): JSX.Element {
   });
 
   const COLORS = ["bg-gray-700", "bg-red-700", "bg-green-700", "bg-yellow-700", "bg-purple-700", "bg-pink-700"]
-  const randomElement = COLORS[Math.floor(Math.random() * COLORS.length)];
 
   if (error) return <pre>{error}</pre>;
   if (loading) return <pre>{loading}</pre>;
@@ -99,13 +120,13 @@ export function QuizzesList(): JSX.Element {
       <section className="container flex flex-wrap justify-around items-center p-8 mx-auto">
         {quizzes.map((q: QuizType, key: number) => (
           <article
-            className="w-1/5 mx-0.5 my-3 rounded bg-white bg-opacity-50 shadow flex"
+            className="w-1/5 mx-0.5 my-3 rounded bg-white bg-opacity-50 shadow flex js-show-on-scroll"
             key={key}
           >
             <span className={`${COLORS[Math.floor(Math.random() * COLORS.length)]} w-2 rounded-l`}>&nbsp;</span>
             <div className="flex flex-col flex-grow p-2">
               <p className="mb-0.5">{q.title}</p>
-              <p className="text-xs">{q.subtitle}</p>
+              <p className="text-xs mb-6">{q.subtitle}</p>
               <small className="text-xs text-gray-500">
                 {q.createdAt && new Date(q.createdAt).toLocaleDateString()}
               </small>

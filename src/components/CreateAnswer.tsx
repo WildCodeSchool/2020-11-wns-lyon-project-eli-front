@@ -45,7 +45,7 @@ const CreateAnswer = ({
   return (
     <div className="w-full flex mb-2">
       <input
-        className="ml-4 mr-1"
+        className="ml-4 mr-1 checked:bg-pink-400"
         type={multipleChoice ? "checkbox" : "radio"}
         checked={answer.is_correct}
         onChange={toggleAnswerType}
