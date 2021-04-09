@@ -19,6 +19,7 @@ import { QuizEditor } from "./components/QuizEditor";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faSortAlphaDown, faSortNumericDownAlt, faGripHorizontal, faSearch, faListUl, faFilter, faEllipsisV, faPlayCircle, faEye, faColumns, faPen, faTimes} from '@fortawesome/free-solid-svg-icons'
+import { Dashboard } from './pages/Dashboard';
 
 library.add(fab, faSortAlphaDown, faGripHorizontal, faSearch, faSortNumericDownAlt, faListUl, faFilter, faEllipsisV, faPlayCircle, faEye, faColumns, faPen, faTimes)
 
@@ -30,7 +31,7 @@ export const routes = [
   },
   {
     path: "/home",
-    main: Home,
+    main: Dashboard,
   },
   {
     path: "/quiz",
