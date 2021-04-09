@@ -12,10 +12,10 @@ export const Quiz = (): JSX.Element => {
   return (
     <section className="w-full ml-48 flex-col bg-gradient-to-r from-green-300 via-green-200 via-green-100 to-blue-100">
       <Router>
-        <header className="w-full my-10 flex justify-around">
+        <div className="w-full my-10 flex justify-around bg-opacity-20">
           <Link to="/quiz" className="bg-white bg-opacity-30 rounded shadow py-2 px-4 transform transition duration-900 hover:scale-105 focus:ring-2 focus:ring-blue-300">Collection</Link>
           <Link to={`${url}/create`} className="bg-white bg-opacity-30 rounded shadow py-2 px-4 transform transition duration-900 hover:scale-105 focus:ring-2 focus:ring-blue-300">Quiz Editor</Link>
-        </header>
+        </div>
 
         <Switch>
           <Route exact path={path} component={QuizzesList} />

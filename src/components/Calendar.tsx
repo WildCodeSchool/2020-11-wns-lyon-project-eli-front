@@ -1,3 +1,4 @@
+import React from 'react';
 import * as dateFns from 'date-fns';
 import { useState } from 'react';
 import './Calendar.css';

@@ -12,9 +12,6 @@ export function ReactRouter(): JSX.Element {
     <section className="min-h-screen flex flex-nowrap bg-gray-50">
       <Router>
         <Navbar />
-        <header className="h-50 fixed top-0 right-0 border border-gray-700">
-          <p>UserName</p>
-        </header>
         <Switch>
           {routes.map((route, index) => (
             // Render more <Route>s with the same paths as
